@@ -36,7 +36,7 @@ Compiler options to pass to `Emblem.precompile()`.
 
 [travis-url]: http://travis-ci.org/inDream/gulp-auto-emblem
 [travis-image]: https://secure.travis-ci.org/inDream/gulp-auto-emblem.png?branch=master
-[npm-url]: https://npmjs.org/package/gulp-ember-emblem
+[npm-url]: https://npmjs.org/package/gulp-auto-emblem
 [npm-image]: https://badge.fury.io/js/gulp-auto-emblem.png
 
 [gulp-ember-emblem]: https://github.com/wbyoung/gulp-ember-emblem

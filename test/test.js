@@ -26,6 +26,10 @@ var fileMatchesExpected = function(file, fixtureFilename) {
   String(file.contents).should.equal(getExpectedString(fixtureFilename));
 };
 
+var parseContent = function(content){
+  content = content.toString().replace(/\/\*\*\//g, '');
+};
+
 describe('gulp-ember-emblem', function() {
   describe('emberEmblemPlugin()', function() {
 
@@ -52,6 +56,7 @@ describe('gulp-ember-emblem', function() {
       stream.on('data', function(newFile) {
         should.exist(newFile);
         should.exist(newFile.contents);
+        parseContent(newFile.contents);
         fileMatchesExpected(newFile, 'basic.js');
         done();
       });
@@ -68,6 +73,7 @@ describe('gulp-ember-emblem', function() {
       stream.on('data', function(newFile) {
         should.exist(newFile);
         should.exist(newFile.contents);
+        parseContent(newFile.contents);
         fileMatchesExpected(newFile, 'basic.js');
 
         count += 1;
