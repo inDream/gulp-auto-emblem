@@ -1,0 +1,40 @@
+{
+  "name": "gulp-auto-emblem",
+  "version": "0.1.0",
+  "description": "Gulp task for Emblem.js templates with Ember",
+  "homepage": "https://github.com/inDream/gulp-auto-emblem",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/inDream/gulp-auto-emblem.git"
+  },
+  "keywords": [
+    "gulpplugin",
+    "gulpfriendly",
+    "ember",
+    "emblem",
+    "handlebars"
+  ],
+  "author": {
+    "name": "inDream"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "through2": "~0.4",
+    "handlebars": "~1",
+    "emblem": "~0.3",
+    "gulp-util": "~2.2.0"
+  },
+  "devDependencies": {
+    "should": "~3.1.0",
+    "mocha": "~1.17.0"
+  },
+  "readme": "# gulp-auto-emblem [![NPM version][npm-image]][npm-url] [![Build status][travis-image]][travis-url]\n\nThis is a gulp plugin to process [Emblem.js](http://emblemjs.com) templates specifically for [Ember](http://emberjs.com/). Modified from [gulp-ember-emblem].\n\n## Usage\n\nFirst, install _gulp-auto-emblem_:\n\n```shell\nnpm install gulp-auto-emblem\n```\n\nThen, add it to your `gulpfile.js`:\n\n```javascript\nvar autoEmblem = require('gulp-auto-emblem');\n\ngulp.task('templates', function(){\n  gulp.src(['client/templates/*.emblem'])\n    .pipe(autoEmblem())\n    .pipe(gulp.dest('build/templates/'));\n});\n```\n\ngulp-auto-emblem outputs a raw `Ember.Handlebars.template` function, so it is likely that you will want to use [gulp-ember-emblem] to make the handlebars template available via a specific namespace or for use with a module system. For additional usage examples, we recommend that you visit [gulp-ember-emblem].\n\n## API\n\n### emberEmblem(options)\n\n#### options.compilerOptions\nType: `Object`\n\nCompiler options to pass to `Emblem.precompile()`.\n\n\n[travis-url]: http://travis-ci.org/inDream/gulp-auto-emblem\n[travis-image]: https://secure.travis-ci.org/inDream/gulp-auto-emblem.png?branch=master\n[npm-url]: https://npmjs.org/package/gulp-ember-emblem\n[npm-image]: https://badge.fury.io/js/gulp-auto-emblem.png\n\n[gulp-ember-emblem]: https://github.com/wbyoung/gulp-ember-emblem\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/inDream/gulp-auto-emblem/issues"
+  }
+}
