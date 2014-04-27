@@ -25,11 +25,17 @@ gulp.task('templates', function(){
 
 gulp-auto-emblem outputs a raw `Ember.Handlebars.template` function, so it is likely that you will want to use [gulp-ember-emblem] to make the handlebars template available via a specific namespace or for use with a module system. For additional usage examples, we recommend that you visit [gulp-ember-emblem].
 
-## API
+Default template name is chosen from the file name. For example `index.index.emblem` -> `index/index`
 
-### emberEmblem(options)
+### Options
 
-#### options.compilerOptions
+#### rootPath
+Type: `String`
+
+Specify the path to your template folder. This is only used when registering the template names.  
+For example if your template is at the path `app/templates/posts/teaser.emblem` and `app/templates` is set as your root then the template's name will be `posts/teaser`
+
+#### compilerOptions
 Type: `Object`
 
 Compiler options to pass to `Emblem.precompile()`.

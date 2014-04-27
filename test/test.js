@@ -85,5 +85,21 @@ describe('gulp-ember-emblem', function() {
       stream.write(basicTemplate2);
       stream.end();
     });
+
+    it('should compile templates with rootPath', function(done) {
+      var stream = emberEmblemPlugin({rootPath: 'test'});
+      var basicTemplate = getFixture('basic.em');
+
+      stream.on('data', function(newFile) {
+        should.exist(newFile);
+        should.exist(newFile.contents);
+        parseContent(newFile.contents);
+        fileMatchesExpected(newFile, 'basic_rootPath.js');
+        done();
+      });
+      stream.write(basicTemplate);
+      stream.end();
+    });
+
   });
 });
