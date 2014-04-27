@@ -33,7 +33,7 @@
   // var emberAssert = Ember.assert;
   var Handlebars = (Ember.imports && Ember.imports.Handlebars) || (this && this.Handlebars);
   if (!Handlebars && typeof require === 'function') {
-    Handlebars = require('handlebars');
+    Handlebars = require('emblem/node_modules/handlebars');
   }
 
   Ember.assert("Ember Handlebars requires Handlebars version 1.0 or 1.1. Include " +
