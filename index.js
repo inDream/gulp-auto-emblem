@@ -9,7 +9,7 @@ var Ember = require('./vendor/ember');
 var getTemplateName = function(filepath, options){
   var name;
   if(options.rootPath){
-    name = filepath.replace(new RegExp('\\\\', 'g'), '/').replace(/\.\w+$/, '').replace(options.rootPath, '');
+    name = filepath.replace(new RegExp('\\\\', 'g'), '/').replace(/\.\w+$/, '').replace(new RegExp('.*'+options.rootPath), '');
   }else{
     name = path.basename(filepath).slice(0, -path.extname(filepath).length).replace(/\./g, '/');
   }
